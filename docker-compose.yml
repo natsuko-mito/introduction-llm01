@@ -1,0 +1,12 @@
+services:
+  llm01:
+    build: .
+    container_name: 'llm01'
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    working_dir: '/root/'
+    ports:
+      - 8501:8501
+    tty: true
+    volumes:
+      - ./gihyo-langchain-translate:/root/gihyo-langchain-translate
